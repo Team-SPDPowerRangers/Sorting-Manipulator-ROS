@@ -1,0 +1,9 @@
+<launch>
+	<include file="$(find sorting_manipulator_project_moveit_config)/launch/gazebo.launch" />
+	<include file="$(find sorting_manipulator_project_moveit_config)/launch/move_group.launch" />
+	
+	<arg name="open_rviz" default="true" />
+	<group if="$(arg open_rviz)">
+	<node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find sorting_manipulator_project_moveit_config)/rviz/manipulator_rviz.rviz" />
+	</group>	
+</launch>
