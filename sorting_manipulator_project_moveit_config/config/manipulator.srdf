@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="manipulator">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="arm">
+        <link name="base_link"/>
+        <link name="link1"/>
+        <link name="link2"/>
+        <link name="link3"/>
+        <link name="link4"/>
+        <link name="link5"/>
+        <link name="link6"/>
+        <joint name="joint1"/>
+        <joint name="joint2"/>
+        <joint name="joint3"/>
+        <joint name="joint4"/>
+        <joint name="joint5"/>
+        <joint name="joint6"/>
+    </group>
+    <group name="gripper">
+        <link name="finger1"/>
+        <link name="finger2"/>
+        <joint name="f_joint1"/>
+        <joint name="f_joint2"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="initial" group="arm">
+        <joint name="joint1" value="0"/>
+        <joint name="joint2" value="0"/>
+        <joint name="joint3" value="0"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="0"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_1_lift" group="arm">
+        <joint name="joint1" value="0"/>
+        <joint name="joint2" value="-0.5465"/>
+        <joint name="joint3" value="1.1564"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.15"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_2_lift" group="arm">
+        <joint name="joint1" value="0.3925"/>
+        <joint name="joint2" value="-0.5465"/>
+        <joint name="joint3" value="1.1564"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.15"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_3_lift" group="arm">
+        <joint name="joint1" value="0.785"/>
+        <joint name="joint2" value="-0.5465"/>
+        <joint name="joint3" value="1.1564"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.15"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_4_lift" group="arm">
+        <joint name="joint1" value="1.57"/>
+        <joint name="joint2" value="-0.5465"/>
+        <joint name="joint3" value="1.1564"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.15"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_5_lift" group="arm">
+        <joint name="joint1" value="2.355"/>
+        <joint name="joint2" value="-0.5465"/>
+        <joint name="joint3" value="1.1564"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.15"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_6_lift" group="arm">
+        <joint name="joint1" value="3.14"/>
+        <joint name="joint2" value="-0.5465"/>
+        <joint name="joint3" value="1.1564"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.15"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_7_lift" group="arm">
+        <joint name="joint1" value="-2.355"/>
+        <joint name="joint2" value="-0.5465"/>
+        <joint name="joint3" value="1.1564"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.15"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_8_lift" group="arm">
+        <joint name="joint1" value="-1.57"/>
+        <joint name="joint2" value="-0.5465"/>
+        <joint name="joint3" value="1.1564"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.15"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_9_lift" group="arm">
+        <joint name="joint1" value="-0.785"/>
+        <joint name="joint2" value="-0.5465"/>
+        <joint name="joint3" value="1.1564"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.15"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_1_pick" group="arm">
+        <joint name="joint1" value="0"/>
+        <joint name="joint2" value="0.0607"/>
+        <joint name="joint3" value="1.7465"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.3489"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_2_pick" group="arm">
+        <joint name="joint1" value="0.3925"/>
+        <joint name="joint2" value="0.0607"/>
+        <joint name="joint3" value="1.7465"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.3489"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_3_pick" group="arm">
+        <joint name="joint1" value="0.785"/>
+        <joint name="joint2" value="0.0607"/>
+        <joint name="joint3" value="1.7465"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.3489"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_4_pick" group="arm">
+        <joint name="joint1" value="1.57"/>
+        <joint name="joint2" value="0.0607"/>
+        <joint name="joint3" value="1.7465"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.3489"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_5_pick" group="arm">
+        <joint name="joint1" value="2.355"/>
+        <joint name="joint2" value="0.0607"/>
+        <joint name="joint3" value="1.7465"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.3489"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_6_pick" group="arm">
+        <joint name="joint1" value="3.14"/>
+        <joint name="joint2" value="0.0607"/>
+        <joint name="joint3" value="1.7465"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.3489"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_7_pick" group="arm">
+        <joint name="joint1" value="-2.355"/>
+        <joint name="joint2" value="0.0607"/>
+        <joint name="joint3" value="1.7465"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.3489"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_8_pick" group="arm">
+        <joint name="joint1" value="-1.57"/>
+        <joint name="joint2" value="0.0607"/>
+        <joint name="joint3" value="1.7465"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.3489"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="obj_9_pick" group="arm">
+        <joint name="joint1" value="-0.785"/>
+        <joint name="joint2" value="0.0607"/>
+        <joint name="joint3" value="1.7465"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.3489"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="green_obj_place" group="arm">
+        <joint name="joint1" value="0.785"/>
+        <joint name="joint2" value="0.8761"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.5193"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="red_obj_place" group="arm">
+        <joint name="joint1" value="2.355"/>
+        <joint name="joint2" value="0.8761"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.5193"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="blue_obj_place" group="arm">
+        <joint name="joint1" value="-2.355"/>
+        <joint name="joint2" value="0.8761"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.5193"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="gripper_open" group="gripper">
+        <joint name="f_joint1" value="0"/>
+        <joint name="f_joint2" value="0"/>
+    </group_state>
+    <group_state name="gripper_mid" group="gripper">
+        <joint name="f_joint1" value="0.01"/>
+        <joint name="f_joint2" value="-0.01"/>
+    </group_state>
+    <group_state name="gripper_close" group="gripper">
+        <joint name="f_joint1" value="0.015"/>
+        <joint name="f_joint2" value="-0.015"/>
+    </group_state>
+    <group_state name="green_obj_place_better" group="arm">
+        <joint name="joint1" value="0.785"/>
+        <joint name="joint2" value="1.0149"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.7749"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="red_obj_place_better" group="arm">
+        <joint name="joint1" value="2.355"/>
+        <joint name="joint2" value="1.0149"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.7749"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="blue_obj_place_better" group="arm">
+        <joint name="joint1" value="-1.9625"/>
+        <joint name="joint2" value="1.0149"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.7749"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="green_obj_better_2" group="arm">
+        <joint name="joint1" value="0.85"/>
+        <joint name="joint2" value="1.0149"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.7749"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="green_obj_place_better_3" group="arm">
+        <joint name="joint1" value="0.9"/>
+        <joint name="joint2" value="1.0149"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.7749"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="red_obj_place_better_2" group="arm">
+        <joint name="joint1" value="2.39"/>
+        <joint name="joint2" value="1.0149"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.7749"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="red_obj_place_better_3" group="arm">
+        <joint name="joint1" value="2.42"/>
+        <joint name="joint2" value="1.0149"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.7749"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="blue_obj_place_better_2" group="arm">
+        <joint name="joint1" value="-1.94"/>
+        <joint name="joint2" value="1.0149"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.7749"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <group_state name="blue_obj_place_better_3" group="arm">
+        <joint name="joint1" value="-1.9"/>
+        <joint name="joint2" value="1.0149"/>
+        <joint name="joint3" value="0.2414"/>
+        <joint name="joint4" value="0"/>
+        <joint name="joint5" value="1.7749"/>
+        <joint name="joint6" value="0"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="gripper" parent_link="link6" group="gripper"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="finger1" link2="finger2" reason="Never"/>
+    <disable_collisions link1="finger1" link2="link3" reason="Never"/>
+    <disable_collisions link1="finger1" link2="link4" reason="Never"/>
+    <disable_collisions link1="finger1" link2="link5" reason="Never"/>
+    <disable_collisions link1="finger1" link2="link6" reason="Adjacent"/>
+    <disable_collisions link1="finger2" link2="link3" reason="Never"/>
+    <disable_collisions link1="finger2" link2="link4" reason="Never"/>
+    <disable_collisions link1="finger2" link2="link5" reason="Never"/>
+    <disable_collisions link1="finger2" link2="link6" reason="Adjacent"/>
+    <disable_collisions link1="link1" link2="link2" reason="Adjacent"/>
+    <disable_collisions link1="link1" link2="link4" reason="Never"/>
+    <disable_collisions link1="link2" link2="link3" reason="Adjacent"/>
+    <disable_collisions link1="link2" link2="link4" reason="Never"/>
+    <disable_collisions link1="link2" link2="link5" reason="Never"/>
+    <disable_collisions link1="link3" link2="link4" reason="Adjacent"/>
+    <disable_collisions link1="link4" link2="link5" reason="Adjacent"/>
+    <disable_collisions link1="link5" link2="link6" reason="Adjacent"/>
+</robot>
