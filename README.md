@@ -10,3 +10,8 @@ Implement  a  sorting  robotic  arm  to  sort  the  objects  based  on  the  col
    * [@SatwikReddySripathi](https://github.com/SatwikReddySripathi)
    * [@PradyumnaNadella](https://github.com/PradyumnaNadella)
    * [@DhanushAkula](https://github.com/DhanushAkula)
+
+## Contact Us
+* [satwikreddysripathi@gmail.com]
+* [nadellaprady10@gmail.com]
+* [dhanushakula18@gmail.com]
